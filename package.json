@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start": "node server-dist/index.js",
-    "prepack": "npm run build",
+    "install": "npm run build",
     "serve": "vue-cli-service serve",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vue-cli-service build",
