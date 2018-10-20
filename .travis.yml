@@ -1,12 +1,18 @@
 language: node_js
 node_js:
-- '7'
-script:
-- npm run lint
-- npm run t
+- '8'
+
+
 cache:
   directories:
   - node_modules
+
+
+script:
+- npm run lint
+- npm run t
+
+
 before_deploy:
 - npm pack
 - ls -a | grep -v ".tgz"  | xargs rm -rf
