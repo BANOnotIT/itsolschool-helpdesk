@@ -17,8 +17,7 @@ before_deploy:
 - npm pack
 - ls -a | grep -v ".tgz"  | xargs rm -rf
 - tar xf *.tgz
-- mv -r package/** ./
-- rm -rf package
+- cd package/
 deploy:
   provider: heroku
   api_key:
