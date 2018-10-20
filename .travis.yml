@@ -1,12 +1,19 @@
 language: node_js
 node_js:
 - '7'
-
+script:
+- npm run lint
+- npm run t
 cache:
   directories:
   - node_modules
-
+before_deploy:
+- npm pack
+- ls -a | grep -v ".tgz"  | xargs rm -rf
+- tar xf *.tgz
+- mv -r package/** ./
+- rm -rf package
 deploy:
   provider: heroku
   api_key:
-    secure: YZ/C+W3LYKUNyypvxrYFrPoxHmd6P0Wc6ZrqPyMBAtUPhMWpYALznyLwkG84UWV34CE+nCw/k7M7488ojgtYBZ2bb7kkaGu+shM2bEeFg5CohLJPKoOsDGzw+l1slo8crh2aLypxGgA9JZO1RBndlpwV4W5dlZWkgMivbpSm960uJML/+hdao67R76uvrN77c1TtH65r5zOup1eM2F8USwLRiqJg4nCTr0/l2IVY18uhTTa8naRkw9KjmxSAz4VRqyjJgD33Nb/GsdI69wZMv4AwU4wU26pUYLAl62gLIX+4BRh2ZpMVE2hS/riJoLcSEEmZfgUrRpcO+douQQ1cOIzXmmO19BSGBXO4oYLQZ5NU+KrXjXD9vNef8yl0gpN8YnMa2FEDLplYDEJZW/SHvRk02DY4FwFe/9qlz5FUBMExUQWgOrovMwQLoTvPkDEXKhDVibDXEnPloiTfdOT1ygp8fRfUj5WtbJhNVunDFCCVUgXg3/8s3Mmpgp0QqdadvJFJxjuEhfwBhTvteMEuECfMacBLAT2YBmi6n+uMXxRO4jCNbsWRaKi/FCkh8WzI5VM8/9RobPSQfA8b8NcA3kZBvLPwa2nh4/nsnwogRT0dfvZQgxs2h9PjHuesNF70e7gu1ZAFtbNml7WSvQOup+Tx68A2RZhdTv8LCMYIsqs=
+    secure: O+r95DHeFrni1NPtRbFZBlqNUwkcieSSfqQpT0pBBi+ZuoVlyPLvdwCTRhCRMDYxvoIHVB/mPjY8K8f60h4miKjSK1smlajhrwdPXFoLIXXxeMv+QlpWYVA5dZUl3CRn1ajEDosMXySOB/iHgLM9JfWOgnk4lwZGlesrsMMFAaQLHZPGABXxvqu+vuKP8bCJRTL2jm7Gt5b6X/yIKuVtAEJkCYfRNnd1jle2RJbEAFnL50G4X1XTrWylMYL4PnJD+6dIdrS7hp0c5Refjy1+3b+uLHw7r+a6YbotBDEpGuAQl4MBDVuCvvQ9FpMNG689WYeqZzpQpRKnuNv9zjQFXYm1aImhjqaBxfRDcgDvOyeKdCTq7x8Lj54MqCDF2l6Wg23tkOvkiTKmJhgvpyossVKOAgdSmNRgSB2WKZ1p6Ey7JGW9f8nIbnHDHbPDwhLtArZ8PvzyxFKL1I80d8nQ0ih4K0bs7hrte9qUAm3slQ/fozxSbkzCl8q0k18QfYecC3cfuoDk2Xb7Zr3pEoRlX7ErstmvqsT7082cpk53kRkJEc2BfULe7QQqm0hyXm3q+xeIUt7Dh78DiIFkZXHyV1Yz410EI2rqyTF3mUnmiD2EFY16WHZQKDgo3CXtaHPlNyG8+aqoRLVkP1ZE5WBApjwLmnvv8cCDDSrn5iRcmjs=
