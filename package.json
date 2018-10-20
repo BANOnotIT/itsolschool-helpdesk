@@ -6,9 +6,18 @@
     "email": "bano.notit@gmail.com",
     "name": "BANO.notIT"
   },
+  "main": "index.js",
+  "files": [
+    "dist/",
+    "server-dist/"
+  ],
   "scripts": {
+    "start": "node server-dist/index.js",
+    "prepack": "npm run build",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vue-cli-service build",
+    "build:server": "babel server --no-babelrc --out-dir server-dist --presets=es2015",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
