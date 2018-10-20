@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-- '0.11'
-- '0.10'
+- '7'
+
+cache:
+  directories:
+  - node_modules
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: YZ/C+W3LYKUNyypvxrYFrPoxHmd6P0Wc6ZrqPyMBAtUPhMWpYALznyLwkG84UWV34CE+nCw/k7M7488ojgtYBZ2bb7kkaGu+shM2bEeFg5CohLJPKoOsDGzw+l1slo8crh2aLypxGgA9JZO1RBndlpwV4W5dlZWkgMivbpSm960uJML/+hdao67R76uvrN77c1TtH65r5zOup1eM2F8USwLRiqJg4nCTr0/l2IVY18uhTTa8naRkw9KjmxSAz4VRqyjJgD33Nb/GsdI69wZMv4AwU4wU26pUYLAl62gLIX+4BRh2ZpMVE2hS/riJoLcSEEmZfgUrRpcO+douQQ1cOIzXmmO19BSGBXO4oYLQZ5NU+KrXjXD9vNef8yl0gpN8YnMa2FEDLplYDEJZW/SHvRk02DY4FwFe/9qlz5FUBMExUQWgOrovMwQLoTvPkDEXKhDVibDXEnPloiTfdOT1ygp8fRfUj5WtbJhNVunDFCCVUgXg3/8s3Mmpgp0QqdadvJFJxjuEhfwBhTvteMEuECfMacBLAT2YBmi6n+uMXxRO4jCNbsWRaKi/FCkh8WzI5VM8/9RobPSQfA8b8NcA3kZBvLPwa2nh4/nsnwogRT0dfvZQgxs2h9PjHuesNF70e7gu1ZAFtbNml7WSvQOup+Tx68A2RZhdTv8LCMYIsqs=

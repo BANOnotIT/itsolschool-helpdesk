@@ -40,5 +40,8 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "engines": {
+    "node": "8.12.0"
   }
 }
