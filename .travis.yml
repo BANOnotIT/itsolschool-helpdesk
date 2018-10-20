@@ -10,7 +10,6 @@ script:
 
 before_deploy:
 - npm pack
-- ls -a | grep -v ".tgz"  | xargs rm -rf
 - tar xf *.tgz
 - cd package/
 deploy:
